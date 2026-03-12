@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom';
 import {
   ArrowRightIcon,
   Bars3Icon,
@@ -607,9 +608,12 @@ export default function App() {
               variants={fadeUp}
               className="mt-8 flex flex-col gap-4 sm:flex-row"
             >
-              <button className="rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
-                Request a pilot
-              </button>
+           <button
+              onClick={() => window.open('https://calendly.com/salahzakaria/30min', '_blank')}
+              className="rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
+            >
+              Request a pilot
+            </button>
               <button
                 onClick={() => setContactModalOpen(true)}
                 className="rounded-full border border-white/15 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/[0.09]"
