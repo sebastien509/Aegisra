@@ -197,7 +197,7 @@ const clientRows = [
     title: "Payment processors",
     icon: ShieldExclamationIcon,
     copy:
-      "Improve pre-payment risk posture across high-velocity flows, merchant exposure, and fraud escalation paths.",
+      "Improve fraud & risk posture across high-velocity flows, merchant exposure, and fraud escalation paths.",
   },
   {
     title: "Compliance + audit teams",
@@ -248,7 +248,7 @@ const trustBadges = [
 
 const FloatingCurrencyIcons = () => {
   const icons = useMemo(() => {
-    const symbols = [FaDollarSign, FaEuroSign, FaPoundSign, FaYenSign, FaBitcoin];
+    const symbols = [FaDollarSign, FaEuroSign, FaPoundSign, FaYenSign,FaDollarSign, FaEuroSign, FaDollarSign];
     return Array.from({ length: 100 }, (_, i) => {
       const Symbol = symbols[i % symbols.length];
       const danger = i % 7 === 0 || i % 11 === 0; // 15-20% red icons
@@ -584,17 +584,16 @@ export default function App() {
               className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-blue-200"
             >
               <ShieldExclamationIcon className="h-4 w-4" />
-              Fraud & Loss prevention with  risk and compliance decisioning
+              Fraud & Loss prevention Intelligence with  risk and compliance decisioning
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
               className="mt-8 max-w-3xl text-2xl font-bold tracking-tight text-white md:text-4xl xl:text-5xl"
             >
-            Fraud and loss prevention intelligence for financial institutions.
+            Fraud & loss prevention intelligence for financial institutions.
           <span className="block bg-gradient-to-r from-blue-300 via-white to-emerald-300 bg-clip-text text-transparent">
-          Explainable pre-payment risk insights for banks, fintechs, and payment platforms.
-              </span>
+          Real-time fraud & risk prevention, risk decisioning, and explainable compliance for financial institutions.              </span>
             </motion.h1>
 
             <motion.p
@@ -852,6 +851,84 @@ export default function App() {
           ))}
         </div>
 
+        <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75, delay: 0.15 }}
+      className="lg:col-span-5"
+    >
+      <GlassCard className="overflow-hidden p-0">
+        <div className="border-b border-white/10 px-6 py-5">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200/80">
+                live decision fabric
+              </div>
+              <div className="mt-2 text-2xl font-bold text-white">
+                3 brains → 1 defensible action
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-3">
+              <EyeIcon className="h-7 w-7 text-emerald-300" />
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4 p-6">
+          {[
+            {
+              title: "Classical ML",
+              desc: "Catches recurring fraud patterns in milliseconds.",
+              color: "bg-blue-400",
+            },
+            {
+              title: "Quantum-inspired simulation",
+              desc: "Finds hidden and rare-pattern relationships.",
+              color: "bg-emerald-400",
+            },
+            {
+              title: "Ledger + behavior",
+              desc: "Tracks velocity, links, and suspicious behavior.",
+              color: "bg-red-400",
+            },
+          ].map((row) => (
+            <div
+              key={row.title}
+              className="rounded-2xl border border-white/10 bg-slate-950/30 p-4"
+            >
+              <div className="flex items-start gap-4">
+                <span className={`mt-1 h-3 w-3 rounded-full ${row.color}`} />
+                <div>
+                  <div className="text-base font-semibold text-white">
+                    {row.title}
+                  </div>
+                  <div className="mt-1 text-sm leading-7 text-slate-300">
+                    {row.desc}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <div className="rounded-[24px] border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
+            <div className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-200/70">
+              Decision output
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              {["Approve", "Review", "Step-up", "Block"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-center text-sm font-semibold text-white"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </GlassCard>
+    </motion.div>
+
         <motion.div variants={fadeUp} className="mt-12 grid gap-6 lg:grid-cols-4">
           {["Approve", "Review", "Step-up 2FA", "Block"].map((item, idx) => (
             <div
@@ -1009,7 +1086,7 @@ export default function App() {
     alt="Aegisra Logo"
     className="h-12 w-40 bg-white/80 object-contain rounded-2xl border border-white/10 shadow-[0_10px_40px_rgba(59,130,246,0.35)]"
   />              <p className="mt-2 text-sm leading-7 text-slate-400">
-                Pre-payment fraud prevention and compliance decisioning for
+                Real-time fraud & risk prevention and compliance decisioning for
                 financial institutions, fintechs, and payment infrastructure.
               </p>
             </div>
