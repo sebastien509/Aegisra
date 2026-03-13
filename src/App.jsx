@@ -698,7 +698,7 @@ export default function App() {
                     </div>
                   </div>
                 ))}
-
+{/* 
                 <div className="rounded-[24px] border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
                   <div className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-200/70">
                     Decision output
@@ -713,7 +713,7 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </GlassCard>
           </motion.div>
@@ -851,104 +851,8 @@ export default function App() {
           ))}
         </div>
 
-        <motion.div
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.75, delay: 0.15 }}
-      className="lg:col-span-5"
-    >
-      <GlassCard className="overflow-hidden p-0">
-        <div className="border-b border-white/10 px-6 py-5">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200/80">
-                live decision fabric
-              </div>
-              <div className="mt-2 text-2xl font-bold text-white">
-                3 brains → 1 defensible action
-              </div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-3">
-              <EyeIcon className="h-7 w-7 text-emerald-300" />
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-4 p-6">
-          {[
-            {
-              title: "Classical ML",
-              desc: "Catches recurring fraud patterns in milliseconds.",
-              color: "bg-blue-400",
-            },
-            {
-              title: "Quantum-inspired simulation",
-              desc: "Finds hidden and rare-pattern relationships.",
-              color: "bg-emerald-400",
-            },
-            {
-              title: "Ledger + behavior",
-              desc: "Tracks velocity, links, and suspicious behavior.",
-              color: "bg-red-400",
-            },
-          ].map((row) => (
-            <div
-              key={row.title}
-              className="rounded-2xl border border-white/10 bg-slate-950/30 p-4"
-            >
-              <div className="flex items-start gap-4">
-                <span className={`mt-1 h-3 w-3 rounded-full ${row.color}`} />
-                <div>
-                  <div className="text-base font-semibold text-white">
-                    {row.title}
-                  </div>
-                  <div className="mt-1 text-sm leading-7 text-slate-300">
-                    {row.desc}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          <div className="rounded-[24px] border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
-            <div className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-200/70">
-              Decision output
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {["Approve", "Review", "Step-up", "Block"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-center text-sm font-semibold text-white"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </GlassCard>
-    </motion.div>
-
-        <motion.div variants={fadeUp} className="mt-12 grid gap-6 lg:grid-cols-4">
-          {["Approve", "Review", "Step-up 2FA", "Block"].map((item, idx) => (
-            <div
-              key={item}
-              className={`rounded-[24px] border p-5 text-center ${
-                idx === 0
-                  ? "border-emerald-400/30 bg-emerald-400/[0.06]"
-                  : idx === 1
-                  ? "border-blue-400/30 bg-blue-400/[0.06]"
-                  : idx === 2
-                  ? "border-white/15 bg-white/[0.04]"
-                  : "border-red-400/30 bg-red-400/[0.06]"
-              }`}
-            >
-              <div className="text-sm font-semibold text-white">{item}</div>
-            </div>
-          ))}
-        </motion.div>
-      </motion.section>
-
+        
+</motion.section>
       {/* ----------------------------- Client Fit ----------------------------- */}
       <motion.section
         initial="hidden"
